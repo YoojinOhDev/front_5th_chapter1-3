@@ -7,7 +7,7 @@ function areDeeplySameArrays(arrA: unknown[], arrB: unknown[]): boolean {
 
 function areDeeplySameObjects(
   objA: Record<string, unknown>,
-  objB: Record<string, unknown>
+  objB: Record<string, unknown>,
 ): boolean {
   const objAKeys = Object.keys(objA);
   const objBKeys = Object.keys(objB);
