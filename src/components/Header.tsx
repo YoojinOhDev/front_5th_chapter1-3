@@ -2,9 +2,10 @@ import { useThemeContext } from "../contexts/themeContext";
 import { useUserContext } from "../contexts/userContext";
 import { renderLog } from "../utils";
 import { memo } from "../@lib/hocs/memo";
+import { ComponentType } from "react";
 
 // Header 컴포넌트
-const Header: React.FC = () => {
+export const Header: ComponentType = memo(() => {
   renderLog("Header rendered");
   const { theme, toggleTheme } = useThemeContext();
   const { user, login, logout } = useUserContext();
@@ -47,6 +48,6 @@ const Header: React.FC = () => {
       </div>
     </header>
   );
-};
+});
 
-export const MemoizedHeader = memo(Header);
+// export const MemoizedHeader = memo(Header);

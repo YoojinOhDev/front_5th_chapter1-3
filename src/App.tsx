@@ -1,9 +1,9 @@
 import React from "react";
 import { useThemeContext } from "./contexts/themeContext";
-import { MemoizedHeader } from "./components/Header";
-import { MemoizedItemList } from "./components/ItemList";
-import { MemoizedComplexForm } from "./components/ComplexForm";
-import { MemoizedNotificationSystem } from "./components/NotificationSystem";
+import { Header } from "./components/Header";
+import { ItemList } from "./components/ItemList";
+import { ComplexForm } from "./components/ComplexForm";
+import { NotificationSystem } from "./components/NotificationSystem";
 import { UserProvider } from "./contexts/userContextProvider";
 import { NotificationProvider } from "./contexts/notificationContextProvider";
 import { ThemeProvider } from "./contexts/themeContextProvider";
@@ -17,19 +17,19 @@ const MainContent = () => {
     >
       <NotificationProvider>
         <UserProvider>
-          <MemoizedHeader />
+          <Header />
         </UserProvider>
         <div className="container mx-auto px-4 py-8">
           <div className="flex flex-col md:flex-row">
             <div className="w-full md:w-1/2 md:pr-4">
-              <MemoizedItemList />
+              <ItemList />
             </div>
             <div className="w-full md:w-1/2 md:pl-4">
-              <MemoizedComplexForm />
+              <ComplexForm />
             </div>
           </div>
         </div>
-        <MemoizedNotificationSystem />
+        <NotificationSystem />
       </NotificationProvider>
     </div>
   );

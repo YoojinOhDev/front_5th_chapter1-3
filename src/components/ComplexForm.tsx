@@ -4,7 +4,7 @@ import { renderLog } from "../utils";
 import { memo } from "../@lib/hocs/memo";
 
 // ComplexForm 컴포넌트
-const ComplexForm: React.FC = () => {
+export const ComplexForm = memo(() => {
   renderLog("ComplexForm rendered");
   const { addNotification } = useNotificationContext();
   const [formData, setFormData] = useState({
@@ -86,6 +86,4 @@ const ComplexForm: React.FC = () => {
       </form>
     </div>
   );
-};
-
-export const MemoizedComplexForm = memo(ComplexForm);
+});

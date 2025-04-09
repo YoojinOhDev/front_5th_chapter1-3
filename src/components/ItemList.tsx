@@ -1,11 +1,11 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { useThemeContext } from "../contexts/themeContext";
 import { renderLog } from "../utils";
 import { memo } from "../@lib/hocs/memo";
 import { generateItems } from "../utils";
 
 // ItemList 컴포넌트
-const ItemList: React.FC = () => {
+export const ItemList = React.memo(() => {
   renderLog("ItemList rendered");
   const [items, setItems] = useState(generateItems(1000));
   const [filter, setFilter] = useState("");
@@ -66,6 +66,4 @@ const ItemList: React.FC = () => {
       </ul>
     </div>
   );
-};
-
-export const MemoizedItemList = memo(ItemList);
+});

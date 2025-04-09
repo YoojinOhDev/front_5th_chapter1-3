@@ -3,7 +3,7 @@ import { renderLog } from "../utils";
 import { memo } from "../@lib/hocs/memo";
 
 // NotificationSystem 컴포넌트
-const NotificationSystem: React.FC = () => {
+export const NotificationSystem = memo(() => {
   renderLog("NotificationSystem rendered");
   const { notifications, removeNotification } = useNotificationContext();
 
@@ -33,6 +33,6 @@ const NotificationSystem: React.FC = () => {
       ))}
     </div>
   );
-};
+}
+);
 
-export const MemoizedNotificationSystem = memo(NotificationSystem);
