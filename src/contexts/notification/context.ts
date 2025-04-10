@@ -1,4 +1,4 @@
-import { Notification } from "../type";
+import { Notification } from "../../type.ts";
 import { createContext, useContext } from "react";
 
 export interface NotificationContextType {
@@ -7,12 +7,12 @@ export interface NotificationContextType {
   removeNotification: (id: number) => void;
 }
 
-export const NotificationContext = createContext<
-  NotificationContextType | undefined
->(undefined);
+export const Context = createContext<NotificationContextType | undefined>(
+  undefined,
+);
 
 export const useNotificationContext = () => {
-  const context = useContext(NotificationContext);
+  const context = useContext(Context);
 
   if (context === undefined) {
     throw new Error(

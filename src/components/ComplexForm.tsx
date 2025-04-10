@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useNotificationContext } from "../contexts/notificationContext";
+import { useNotificationContext } from "../contexts/notification/context.ts";
 import { renderLog } from "../utils";
 import { memo } from "../@lib/hocs/memo";
 

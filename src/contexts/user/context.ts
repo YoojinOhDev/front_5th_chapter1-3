@@ -1,4 +1,4 @@
-import { User } from "../type";
+import { User } from "../../type.ts";
 import { createContext, useContext } from "react";
 
 export interface UserContextType {
@@ -7,12 +7,10 @@ export interface UserContextType {
   logout: () => void;
 }
 
-export const UserContext = createContext<UserContextType | undefined>(
-  undefined,
-);
+export const Context = createContext<UserContextType | undefined>(undefined);
 
 export const useUserContext = () => {
-  const context = useContext(UserContext);
+  const context = useContext(Context);
   if (context === undefined) {
     throw new Error("useUserContext must be used within an UserProvider");
   }

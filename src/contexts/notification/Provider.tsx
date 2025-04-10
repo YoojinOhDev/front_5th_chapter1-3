@@ -1,9 +1,9 @@
-import { NotificationContext } from "./notificationContext";
+import { Context } from "./context.ts";
 
 import { useMemo, useState, useCallback } from "react";
-import { Notification } from "../type";
-import { NotificationContextType } from "./notificationContext";
-import { memo } from "../@lib";
+import { Notification } from "../../type.ts";
+import { NotificationContextType } from "./context.ts";
+import { memo } from "../../@lib";
 
 const Provider = ({ children }: { children: React.ReactNode }) => {
   const [notifications, setNotifications] = useState<Notification[]>([]);
@@ -36,9 +36,9 @@ const Provider = ({ children }: { children: React.ReactNode }) => {
   );
 
   return (
-    <NotificationContext.Provider value={notificationContextValue}>
+    <Context.Provider value={notificationContextValue}>
       {children}
-    </NotificationContext.Provider>
+    </Context.Provider>
   );
 };
 

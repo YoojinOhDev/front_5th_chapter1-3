@@ -1,5 +1,5 @@
-import { useThemeContext } from "../contexts/themeContext";
-import { useUserContext } from "../contexts/userContext";
+import { useThemeContext } from "../contexts/theme/context.ts";
+import { useUserContext } from "../contexts/user/context.ts";
 import { renderLog } from "../utils";
 import { memo } from "../@lib/hocs/memo";
 import { ComponentType } from "react";
@@ -49,3 +49,5 @@ export const Header: ComponentType = memo(() => {
     </header>
   );
 });
+
+// export const MemoizedHeader = memo(Header);

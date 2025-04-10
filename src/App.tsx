@@ -1,12 +1,12 @@
 import React from "react";
-import { useThemeContext } from "./contexts/themeContext";
+import { useThemeContext } from "./contexts/theme/context.ts";
 import { Header } from "./components/Header";
 import { ItemList } from "./components/ItemList";
 import { ComplexForm } from "./components/ComplexForm";
 import { NotificationSystem } from "./components/NotificationSystem";
-import { UserProvider } from "./contexts/userContextProvider";
-import { NotificationProvider } from "./contexts/notificationContextProvider";
-import { ThemeProvider } from "./contexts/themeContextProvider";
+import { UserProvider } from "./contexts/user/Provider.tsx";
+import { NotificationProvider } from "./contexts/notification/Provider.tsx";
+import { ThemeProvider } from "./contexts/theme/Provider.tsx";
 
 const MainContent = () => {
   const { theme } = useThemeContext();

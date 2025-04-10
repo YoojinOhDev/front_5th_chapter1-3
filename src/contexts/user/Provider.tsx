@@ -1,11 +1,11 @@
-import { UserContext } from "./userContext";
+import { Context } from "./context.ts";
 
-import { useNotificationContext } from "./notificationContext";
+import { useNotificationContext } from "../notification/context.ts";
 
 import { useCallback, useMemo, useState } from "react";
-import { User } from "../type";
-import { UserContextType } from "./userContext";
-import { memo } from "../@lib";
+import { User } from "../../type.ts";
+import { UserContextType } from "./context.ts";
+import { memo } from "../../@lib";
 
 export const Provider = ({ children }: { children: React.ReactNode }) => {
   const { addNotification } = useNotificationContext();
@@ -33,9 +33,7 @@ export const Provider = ({ children }: { children: React.ReactNode }) => {
     [user, login, logout],
   );
   return (
-    <UserContext.Provider value={userContextValue}>
-      {children}
-    </UserContext.Provider>
+    <Context.Provider value={userContextValue}>{children}</Context.Provider>
   );
 };
 

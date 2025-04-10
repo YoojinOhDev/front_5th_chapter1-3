@@ -1,6 +1,6 @@
 import { useCallback, useMemo, useState } from "react";
-import { ThemeContext } from "./themeContext";
-import { ThemeContextType } from "./themeContext";
+import { Context } from "./context.ts";
+import { ThemeContextType } from "./context.ts";
 
 export const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
   const [theme, setTheme] = useState("light");
@@ -18,8 +18,6 @@ export const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
   );
 
   return (
-    <ThemeContext.Provider value={themeContextValue}>
-      {children}
-    </ThemeContext.Provider>
+    <Context.Provider value={themeContextValue}>{children}</Context.Provider>
   );
 };

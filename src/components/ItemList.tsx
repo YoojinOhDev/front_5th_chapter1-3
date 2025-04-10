@@ -1,8 +1,8 @@
 import { useState } from "react";
-import { useThemeContext } from "../contexts/themeContext";
+import { useThemeContext } from "../contexts/theme/context.ts";
 import { renderLog } from "../utils";
+import { memo } from "../@lib/hocs/memo";
 import { generateItems } from "../utils";
-import { memo } from "../@lib";
 
 // ItemList 컴포넌트
 export const ItemList = memo(() => {

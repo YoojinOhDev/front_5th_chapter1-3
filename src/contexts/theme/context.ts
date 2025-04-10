@@ -5,12 +5,10 @@ export interface ThemeContextType {
   toggleTheme: () => void;
 }
 
-export const ThemeContext = createContext<ThemeContextType | undefined>(
-  undefined,
-);
+export const Context = createContext<ThemeContextType | undefined>(undefined);
 
 export const useThemeContext = () => {
-  const context = useContext(ThemeContext);
+  const context = useContext(Context);
   if (context === undefined) {
     throw new Error("useThemeContext must be used within an ThemeProvider");
   }
