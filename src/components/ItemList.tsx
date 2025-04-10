@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { useThemeContext } from "../contexts/themeContext";
 import { renderLog } from "../utils";
-import { memo } from "../@lib/hocs/memo";
 import { generateItems } from "../utils";
 
 // ItemList 컴포넌트

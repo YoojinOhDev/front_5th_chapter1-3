@@ -9,7 +9,7 @@ export function memo<P extends object>(
 ): ComponentType<P> {
   function MemoizedComponent(props: P): ReactElement {
     const memoizedProps = useRef<P | undefined>(undefined);
-    const memoizedComponent = useRef<ComponentType<P> | undefined>(undefined);
+    const memoizedComponent = useRef<ReactElement | undefined>(undefined);
 
     if (
       !memoizedProps.current ||
@@ -17,14 +17,10 @@ export function memo<P extends object>(
       !_equals(memoizedProps.current, props)
     ) {
       memoizedProps.current = props;
-      memoizedComponent.current = Component;
-      return React.createElement(memoizedComponent.current, props);
+      memoizedComponent.current = React.createElement(Component, props);
     }
 
-    return React.createElement(
-      memoizedComponent.current,
-      memoizedProps.current,
-    );
+    return memoizedComponent.current as ReactElement;
   }
 
   return MemoizedComponent;

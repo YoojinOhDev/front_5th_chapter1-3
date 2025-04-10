@@ -49,5 +49,3 @@ export const Header: ComponentType = memo(() => {
     </header>
   );
 });
-
-// export const MemoizedHeader = memo(Header);
