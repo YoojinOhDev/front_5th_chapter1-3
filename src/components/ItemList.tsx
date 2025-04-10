@@ -1,16 +1,18 @@
-import React, { useState } from "react";
+import  { useState } from "react";
 import { useThemeContext } from "../contexts/themeContext";
 import { renderLog } from "../utils";
 import { generateItems } from "../utils";
+import {memo} from "../@lib";
 
 // ItemList 컴포넌트
-export const ItemList = React.memo(() => {
+export const ItemList = memo(() => {
   renderLog("ItemList rendered");
-  const [items, setItems] = useState(generateItems(1000));
+  const [items, setItems] = useState(()=> generateItems(1000));
   const [filter, setFilter] = useState("");
   const { theme } = useThemeContext();
 
   const addItems = () => {
+
     setItems((prevItems) => [
       ...prevItems,
       ...generateItems(1000, prevItems.length),
