@@ -33,6 +33,4 @@ export const NotificationSystem = memo(() => {
       ))}
     </div>
   );
-}
-);
-
+});
